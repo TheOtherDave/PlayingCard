@@ -3,13 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		552FA17E2409B22F00EC8AD8 /* PlayingCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 552FA1742409B22F00EC8AD8 /* PlayingCard.framework */; };
 		552FA1832409B22F00EC8AD8 /* PlayingCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552FA1822409B22F00EC8AD8 /* PlayingCardTests.swift */; };
 		552FA1852409B22F00EC8AD8 /* PlayingCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 552FA1772409B22F00EC8AD8 /* PlayingCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		552FA1912409B24800EC8AD8 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552FA18E2409B24800EC8AD8 /* Rank.swift */; };
+		552FA1922409B24800EC8AD8 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552FA18F2409B24800EC8AD8 /* PlayingCard.swift */; };
+		552FA1932409B24800EC8AD8 /* Suite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552FA1902409B24800EC8AD8 /* Suite.swift */; };
+		552FA1962409B27B00EC8AD8 /* MaybeExpressibleByLiteral in Frameworks */ = {isa = PBXBuildFile; productRef = 552FA1952409B27B00EC8AD8 /* MaybeExpressibleByLiteral */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,9 @@
 		552FA17D2409B22F00EC8AD8 /* PlayingCardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayingCardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		552FA1822409B22F00EC8AD8 /* PlayingCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardTests.swift; sourceTree = "<group>"; };
 		552FA1842409B22F00EC8AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		552FA18E2409B24800EC8AD8 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		552FA18F2409B24800EC8AD8 /* PlayingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		552FA1902409B24800EC8AD8 /* Suite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suite.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552FA1962409B27B00EC8AD8 /* MaybeExpressibleByLiteral in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +79,9 @@
 		552FA1762409B22F00EC8AD8 /* PlayingCard */ = {
 			isa = PBXGroup;
 			children = (
+				552FA18F2409B24800EC8AD8 /* PlayingCard.swift */,
+				552FA18E2409B24800EC8AD8 /* Rank.swift */,
+				552FA1902409B24800EC8AD8 /* Suite.swift */,
 				552FA1772409B22F00EC8AD8 /* PlayingCard.h */,
 				552FA1782409B22F00EC8AD8 /* Info.plist */,
 			);
@@ -114,6 +125,9 @@
 			dependencies = (
 			);
 			name = PlayingCard;
+			packageProductDependencies = (
+				552FA1952409B27B00EC8AD8 /* MaybeExpressibleByLiteral */,
+			);
 			productName = PlayingCard;
 			productReference = 552FA1742409B22F00EC8AD8 /* PlayingCard.framework */;
 			productType = "com.apple.product-type.framework";
@@ -148,6 +162,7 @@
 				TargetAttributes = {
 					552FA1732409B22F00EC8AD8 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					552FA17C2409B22F00EC8AD8 = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -163,6 +178,9 @@
 				Base,
 			);
 			mainGroup = 552FA16A2409B22F00EC8AD8;
+			packageReferences = (
+				552FA1942409B27B00EC8AD8 /* XCRemoteSwiftPackageReference "MaybeExpressibleByLiteral" */,
+			);
 			productRefGroup = 552FA1752409B22F00EC8AD8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -195,6 +213,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				552FA1932409B24800EC8AD8 /* Suite.swift in Sources */,
+				552FA1922409B24800EC8AD8 /* PlayingCard.swift in Sources */,
+				552FA1912409B24800EC8AD8 /* Rank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +361,7 @@
 		552FA1892409B22F00EC8AD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VZJX6MJZ7G;
@@ -356,6 +378,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dmsc.PlayingCard;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +387,7 @@
 		552FA18A2409B22F00EC8AD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = VZJX6MJZ7G;
@@ -388,6 +412,7 @@
 		552FA18C2409B22F00EC8AD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VZJX6MJZ7G;
 				INFOPLIST_FILE = PlayingCardTests/Info.plist;
@@ -406,6 +431,7 @@
 		552FA18D2409B22F00EC8AD8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VZJX6MJZ7G;
 				INFOPLIST_FILE = PlayingCardTests/Info.plist;
@@ -452,6 +478,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		552FA1942409B27B00EC8AD8 /* XCRemoteSwiftPackageReference "MaybeExpressibleByLiteral" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:TheOtherDave/MaybeExpressibleByLiteral.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		552FA1952409B27B00EC8AD8 /* MaybeExpressibleByLiteral */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 552FA1942409B27B00EC8AD8 /* XCRemoteSwiftPackageReference "MaybeExpressibleByLiteral" */;
+			productName = MaybeExpressibleByLiteral;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 552FA16B2409B22F00EC8AD8 /* Project object */;
 }
